@@ -9,7 +9,7 @@ import CardCardapio from "../ui/cardCardapio"
 import Header from "./header"
 import CardDestaque from "../ui/cardDestaque"
 
-import pizza from '../../assets/image/pizza.webp'
+//import pizza from '../../assets/image/pizza.webp'
 import pizzaDoce from '../../assets/image/pizza doce.jpg'
 import entrada from '../../assets/image/entrada.jpg'
 import coca from '../../assets/image/coca.jpg'
@@ -76,19 +76,19 @@ export default function Home() {
                   name: "Margherita Especial",
                   description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
                   price: 49.90,
-                  image: pizza,
+                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                 },
                 {
                   name: "Pepperoni Supreme",
                   description: "Generosa camada de pepperoni, mussarela e orégano.",
                   price: 59.90,
-                  image: pizza,
+                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                 },
                 {
                   name: "Quatro Queijos",
                   description: "Mussarela, gorgonzola, parmesão e provolone derretidos.",
                   price: 54.90,
-                  image: pizza,
+                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                 },
               ].map((item, index) => (
                 <CardDestaque
@@ -132,49 +132,49 @@ export default function Home() {
                     name: "Margherita",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra.",
                     price: 49.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Margherita",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
                     price: 49.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png" ,
                   },
                   {
                     name: "Margherita",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
                     price: 49.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Margherita",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
                     price: 49.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Margherita",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
                     price: 49.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Pepperoni",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
                     price: 59.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Pepperoni",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
                     price: 59.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Pepperoni",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
                     price: 59.90,
-                    image: pizza,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   // ... continue os outros
                 ].map((item, index) => (
