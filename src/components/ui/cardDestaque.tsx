@@ -10,7 +10,7 @@ interface CardProps {
 
 const cardDestaque: React.FC<CardProps> = ({ title, description, price, image }) => {
   return (
-    <div className="mx-auto min-w-50 max-w-[390px] lg:max-w-full max-h-[335px] bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+    <div className="mx-auto min-w-50 max-w-[340px] lg:max-w-full max-h-[325px] bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
       <div className="sm:h-44 h-48 w-full overflow-hidden">
         <img
           src={image}
@@ -21,7 +21,7 @@ const cardDestaque: React.FC<CardProps> = ({ title, description, price, image })
       <div className="p-4">
         <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
         <p className="mt-1 text-sm text-gray-600 line-clamp-2">{description}</p>
-        <div className="mt-3 flex items-center justify-between">
+        <div className="mt-2 flex items-center justify-between">
           <span className="text-lg font-bold text-primary-600">R$ {price.toFixed(2)}</span>
           <ButtonCardapio
             variant="primary"

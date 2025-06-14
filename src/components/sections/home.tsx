@@ -3,23 +3,25 @@
 import { Button } from "../ui/button"
 import { Card } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
-import { Instagram, Twitter, Facebook } from "lucide-react"
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import { ChevronRight, Clock, MapPin, Phone, Star } from "lucide-react"
 import CardCardapio from "../ui/cardCardapio"
 import Header from "./header"
 import CardDestaque from "../ui/cardDestaque"
 
+import Hero from "./hero"
+
 //import pizza from '../../assets/image/pizza.webp'
-import pizzaDoce from '../../assets/image/pizza doce.jpg'
+
 import entrada from '../../assets/image/entrada.jpg'
 import coca from '../../assets/image/coca.jpg'
 
 export default function Home() {
 
   const handleScroll = () => {
-    const cardapioSection = document.getElementById('cardapio');
-    if (cardapioSection) {
-      cardapioSection.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById("cardapio");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -30,59 +32,30 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="inicio" className=" fixed inset-0 z-0">
-          <div className="absolute inset-0">
-            <img
-              src="https://invexo.com.br/blog/wp-content/uploads/2023/01/pizza-pizzaria-jardim-oceanico-rio-de-janeiro.jpg"
-              alt="Pizza Hero"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10" />
-          </div>
-          <div className="container mx-auto relative z-20 flex flex-col items-center justify-center text-center text-white px-4 min-h-[70vh]">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Pizzas Artesanais <span className="text-red-500">Deliciosas</span>
-            </h1>
-            <p className="mt-4 max-w-[700px] text-lg text-gray-200">
-              Ingredientes frescos, massa perfeita e sabor inesquecível. Venha experimentar nossas pizzas artesanais
-              feitas com amor.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button onClick={handleScroll} size="lg" className="bg-red-600 hover:bg-red-700">
-                Ver Cardápio
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-                Fazer Reserva
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        <div className="md:h-[65vh] h-[55vh]"></div>
+        <Hero />
 
         {/* Featured Products */}
-        <section id="destaques" className="bg-gray-100 relative pb-6 pt-14 md:pt-16 max-w-[100dvw] z-10">
+        <section id="destaques" className="bg-gray-100 relative pb-6 pt-8 md:pt-16 max-w-[100dvw] z-10">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="flex flex-col items-center text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tight">Pizzas em Destaque</h2>
-              <p className="mt-4 max-w-[700px] text-muted-foreground">
-                Conheça nossas pizzas mais pedidas e amadas pelos clientes.
+            <div className="flex flex-col items-center text-center mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Destaques</h2>
+              <p className="mt-4 text-sm md:text-base max-w-[700px] text-muted-foreground">
+                Conheça nossos produtos mais pedidos.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  name: "Margherita Especial",
-                  description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                  price: 49.90,
-                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  name: "Jantinha",
+                  description: "Arroz, Feijão tropeiro, mandioca, vinagre e molho da casa.",
+                  price: 25.00,
+                  image: "https://uploads.metroimg.com/wp-content/uploads/2023/09/15160217/confira-6-lugares-para-comer-jantinha-no-DF.jpg",
                 },
                 {
-                  name: "Pepperoni Supreme",
-                  description: "Generosa camada de pepperoni, mussarela e orégano.",
-                  price: 59.90,
-                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  name: "Calda de Vaca atolada",
+                  description: "Calda de vaca atolada, mandioca, vinagre e molho da casa.",
+                  price: 25.00,
+                  image: "https://static.itdg.com.br/images/1200-675/ffb032afadf46833a5b9adf0fd20e0fd/caldo-de-vaca-atolada.jpg",
                 },
                 {
                   name: "Quatro Queijos",
@@ -101,7 +74,7 @@ export default function Home() {
               ))}
             </div>
             <div className="flex justify-center mt-10">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={handleScroll}>
                 Ver Cardápio Completo
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
@@ -110,131 +83,138 @@ export default function Home() {
         </section>
 
         {/* Menu */}
-        <section id="cardapio" className="py-12 md:py-16 px-2 relative z-10 bg-gray-100">
-          <div className="flex flex-col items-center text-center mb-10">
+        <section id="cardapio" className="py-2 md:py-12 px-2 relative z-10 bg-gray-100">
+          <div className="flex flex-col items-center text-center mb-2">
             <h2 className="text-3xl font-bold tracking-tight">Nosso Cardápio</h2>
-            <p className="mt-4 max-w-[700px] text-muted-foreground">
-              Explore nossa variedade de pizzas tradicionais e especiais, além de entradas e bebidas.
-            </p>
+
           </div>
 
-          <Tabs defaultValue="pizzas" className="max-w-5xl 2xl:max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-4 mb-8 max-w-md mx-auto">
-              <TabsTrigger value="pizzas">Pizzas</TabsTrigger>
-              <TabsTrigger value="pizzasDoces">Pizzas Doces</TabsTrigger>
-              <TabsTrigger value="entradas">Entradas</TabsTrigger>
-              <TabsTrigger value="bebidas">Bebidas</TabsTrigger>
+          <Tabs defaultValue="espetos" className="max-w-5xl 2xl:max-w-6xl mx-auto">
+            <TabsList className="flex flex-wrap justify-center gap-1 md:gap-2 p-2 mb-16">
+              <TabsTrigger
+                value="espetos"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍖 Espetos
+              </TabsTrigger>
+              <TabsTrigger
+                value="jantinha"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍽️ Jantinha
+              </TabsTrigger>
+              <TabsTrigger
+                value="porções"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍟 Porções
+              </TabsTrigger>
+              <TabsTrigger
+                value="bebidas"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🥤 Bebidas
+              </TabsTrigger>
+              <TabsTrigger
+                value="caldos"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍲 Caldos
+              </TabsTrigger>
             </TabsList>
-            <TabsContent value="pizzas">
+            <TabsContent value="espetos">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
                 {[
                   {
-                    name: "Margherita",
+                    name: "Franbacon",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra.",
-                    price: 49.90,
+                    price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Margherita",
+                    name: "Franqueijo",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png" ,
-                  },
-                  {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
+                    price: 11.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Margherita",
+                    name: "Kafta com Queijo",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
+                    price: 11.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Margherita",
+                    name: "Quejo Provolone",
                     description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
+                    price: 12.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Pepperoni",
+                    name: "Quejo Coalho",
+                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
+                  {
+                    name: "Pão de Alho",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
-                    price: 59.90,
+                    price: 8.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Pepperoni",
+                    name: "Cupim Bovino",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
-                    price: 59.90,
+                    price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Pepperoni",
+                    name: "Coração",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
-                    price: 59.90,
+                    price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
-                  // ... continue os outros
-                ].map((item, index) => (
-                  <CardCardapio
-                    key={index}
-                    title={item.name}
-                    description={item.description}
-                    price={item.price}
-                    image={item.image}
-                  />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="pizzasDoces">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2  gap-4 mx-auto">
-                {[
                   {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: pizzaDoce,
-                  },
-                  {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: pizzaDoce,
-                  },
-                  {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: pizzaDoce,
-                  },
-                  {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: pizzaDoce,
-                  },
-                  {
-                    name: "Margherita",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
-                    price: 49.90,
-                    image: pizzaDoce,
-                  },
-                  {
-                    name: "Pepperoni",
+                    name: "Linguiça Suína",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
-                    price: 59.90,
-                    image: pizzaDoce,
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
-                    name: "Pepperoni",
+                    name: "Linguiça com Jiló",
                     description: "Generosa camada de pepperoni, mussarela e orégano.",
-                    price: 59.90,
-                    image: pizzaDoce,
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
-                 
+                  {
+                    name: "Contra Filé",
+                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    price: 15.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
+                  {
+                    name: "Asinha de Frango",
+                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
+                  {
+                    name: "Provolone Bacon",
+                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    price: 14.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
+                  {
+                    name: "Fraldinha",
+                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
+                  {
+                    name: "Alcatra",
+                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    price: 10.00,
+                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  },
                   // ... continue os outros
                 ].map((item, index) => (
                   <CardCardapio
@@ -248,31 +228,71 @@ export default function Home() {
               </div>
             </TabsContent>
 
-            <TabsContent value="entradas">
+            <TabsContent value="jantinha">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
                 {[
                   {
-                    name: "Bruschetta",
+                    name: "Jantinha",
+                    description: "Arroz, Feijão tropeiro, mandioca, vinagre e molho da casa.",
+                    price: 25.00,
+                    image: "https://uploads.metroimg.com/wp-content/uploads/2023/09/15160217/confira-6-lugares-para-comer-jantinha-no-DF.jpg",
+                  },
+                  // ... continue os outros
+                ].map((item, index) => (
+                  <CardCardapio
+                    key={index}
+                    title={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                  />
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="porções">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
+                {[
+                  {
+                    name: "Tomate",
                     description: "Fatias de pão italiano com tomate, alho, manjericão e azeite.",
-                    price: 29.90,
+                    price: 8.00,
                     image: entrada,
                   },
                   {
-                    name: "Palitos de Alho",
+                    name: "Torresmo",
                     description: "Palitos de massa com alho, parmesão e ervas.",
-                    price: 24.90,
+                    price: 8.00,
                     image: entrada,
                   },
                   {
-                    name: "Salada Caprese",
+                    name: "Mandioca",
                     description: "Tomate, mussarela de búfala, manjericão e azeite.",
-                    price: 34.90,
+                    price: 10.00,
                     image: entrada,
                   },
                   {
-                    name: "Batata Frita",
+                    name: "Mandioca c/ Tomate",
                     description: "Porção de batatas fritas crocantes.",
-                    price: 19.90,
+                    price: 12.00,
+                    image: entrada,
+                  },
+                  {
+                    name: "Arroz",
+                    description: "Porção de batatas fritas crocantes.",
+                    price: 10.00,
+                    image: entrada,
+                  },
+                  {
+                    name: "Feijão Tropeiro",
+                    description: "Porção de batatas fritas crocantes.",
+                    price: 12.00,
+                    image: entrada,
+                  },
+                  {
+                    name: "Jantinha sem espeto",
+                    description: "Porção de batatas fritas crocantes.",
+                    price: 15.00,
                     image: entrada,
                   },
                 ].map((item, index) => (
@@ -324,40 +344,67 @@ export default function Home() {
                 ))}
               </div>
             </TabsContent>
+            <TabsContent value="caldos">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
+                {[
+                  {
+                    name: "Caldo de Frango",
+                    description: "Lata 350ml (Coca-Cola, Guaraná, Sprite)",
+                    price: 15.00,
+                    image: coca,
+                  },
+                  {
+                    name: "Caldo de Vaca atolada",
+                    description: "Copo 300ml (Laranja, Limão, Abacaxi)",
+                    price: 15.00,
+                    image: coca,
+                  },
+                ].map((item, index) => (
+                  <CardCardapio
+                    key={index}
+                    title={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                  />
+                ))}
+              </div>
+            </TabsContent>
           </Tabs>
         </section>
 
         {/* Features */}
-        <section className="bg-white relative z-10 container mx-auto py-12 md:py-16 px-4 max-w-[100dvw]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-600 mb-4">
-                <Star className="h-6 w-6" />
+        <section className="bg-gray-100 relative z-10 container mx-auto py-12 md:py-16 px-4 max-w-[100dvw]">
+           {/* Info Cards */}
+           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <MapPin className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Qualidade Premium</h3>
-              <p className="mt-2 text-muted-foreground">Ingredientes selecionados e receitas tradicionais italianas.</p>
+              <h3 className="font-bold text-gray-800 mb-2">Localização</h3>
+              <p className="text-gray-600">Sempre em movimento pela cidade</p>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-600 mb-4">
-                <Clock className="h-6 w-6" />
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Clock className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Entrega Rápida</h3>
-              <p className="mt-2 text-muted-foreground">Sua pizza quentinha em até 30 minutos ou a entrega é grátis.</p>
+              <h3 className="font-bold text-gray-800 mb-2">Horário</h3>
+              <p className="text-gray-600">Ter-Dom: 18h às 23h</p>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-red-600 mb-4">
-                <MapPin className="h-6 w-6" />
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+              <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Phone className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold">Ambiente Acolhedor</h3>
-              <p className="mt-2 text-muted-foreground">
-                Visite nossa pizzaria e desfrute de um ambiente familiar e aconchegante.
-              </p>
+              <h3 className="font-bold text-gray-800 mb-2">Contato</h3>
+              <p className="text-gray-600">(11) 99999-9999</p>
             </div>
           </div>
         </section>
 
         {/* About */}
-        <section id="sobre" className="bg-gray-50 py-12 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
+        <section id="sobre" className="bg-gray-100 py-2 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
           <div className="container mx-auto px-4 max-w-6xl 2xl:max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative  rounded-lg overflow-hidden">
@@ -442,52 +489,65 @@ export default function Home() {
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <MapPin className="h-5 w-5 text-red-600 mr-3" />
-                    <p>Av. Principal, 1234 - Centro, Sua Cidade - Estado</p>
+                    <p>Av. Bahia - Centro, 450 - Araguari - MG</p>
                   </div>
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-red-600 mr-3" />
-                    <p>(11) 99999-9999</p>
+                    <p>(55) 34 8432-0119</p>
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-5 w-5 text-red-600 mr-3" />
                     <div>
-                      <p>Segunda a Sexta: 18h às 23h</p>
-                      <p>Sábados e Domingos: 18h às 00h</p>
+                      <p>Segunda a Sábado: 17h às 22:30h</p>
                     </div>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold mt-8 mb-4">Redes Sociais</h3>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/kombi_espeto/" target="_blank" rel="noopener noreferrer"
                     className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
                   >
-                    <Instagram className="h-5 w-5" />
+                    <FaInstagram className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/kombi_espeto/" target="_blank" rel="noopener noreferrer"
                     className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
                   >
-                    <Facebook className="h-5 w-5" />
+                    <FaFacebook className="h-5 w-5" />
                   </a>
                   <a
-                    href="#"
+                    href="https://wa.me/553484320119" target="_blank" rel="noopener noreferrer"
                     className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <FaWhatsapp className="h-5 w-5" />
                   </a>
                 </div>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Mapa da Localização"
-                  className="object-cover"
-                />
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.1018483027306!2d-48.200893924046596!3d-18.65942510000595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a431ad5660344d%3A0x37f6cc9835ced63e!2sAv.%20Bahia%2C%20450%20-%20Centro%2C%20Araguari%20-%20MG%2C%2038440-188!5e0!3m2!1spt-BR!2sbr!4v1749911907420!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Button className="bg-red-600 hover:bg-red-700">Ver no Google Maps</Button>
+                  <a
+                    href="https://maps.app.goo.gl/t8DjKJjvthvPNLET7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+                      Ver no Google Maps
+                    </button>
+                  </a>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -513,7 +573,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 max-w-[100dvw] mx-auto z-10 relative">
+      <footer className="bg-gray-900 text-gray-300 py-12 max-w-[100dvw] mx-auto z-10 relative w-full">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>

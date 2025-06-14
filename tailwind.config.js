@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'h800': { 'raw': '(min-height: 800px)' }, // Define breakpoint para altura
+      },
+    },
   },
   plugins: [],
 }

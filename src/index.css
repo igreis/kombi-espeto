@@ -80,6 +80,6 @@ body {
 }
 
 html {
-  scroll-padding-top: 20px;
+  scroll-padding-top: 50px;
   scroll-behavior: smooth;
 }
