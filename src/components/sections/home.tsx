@@ -15,6 +15,7 @@ import Hero from "./hero"
 
 import entrada from '../../assets/image/entrada.jpg'
 import coca from '../../assets/image/coca.jpg'
+import fraldinha from '../../assets/image/espetos/espeto-fraldinha.jpeg'
 
 export default function Home() {
 
@@ -58,10 +59,10 @@ export default function Home() {
                   image: "https://static.itdg.com.br/images/1200-675/ffb032afadf46833a5b9adf0fd20e0fd/caldo-de-vaca-atolada.jpg",
                 },
                 {
-                  name: "Quatro Queijos",
-                  description: "Mussarela, gorgonzola, parmesão e provolone derretidos.",
+                  name: "Fraldinha",
+                  description: "Espeto de vaca delicioso!",
                   price: 54.90,
-                  image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                  image: fraldinha,
                 },
               ].map((item, index) => (
                 <CardDestaque
@@ -127,91 +128,91 @@ export default function Home() {
                 {[
                   {
                     name: "Franbacon",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra.",
+                    description: "Melhor franbacon da ciidade!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Franqueijo",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
+                    description: "Delicioso espeto de frango com queijo!",
                     price: 11.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Kafta com Queijo",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
+                    description: "Espeto de kafta irresistível!",
                     price: 11.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Quejo Provolone",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
+                    description: "Espeto de provolone delicioso!",
                     price: 12.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Quejo Coalho",
-                    description: "Molho de tomate, mussarela fresca, manjericão e azeite extra virgem.",
+                    description: "Espeto de coalho delicioso!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Pão de Alho",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de pão de alho irresistível!",
                     price: 8.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Cupim Bovino",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de cupim bovino caprichado!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Coração",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de coração irresistível!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Linguiça Suína",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de linguiça caprichado.",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Linguiça com Jiló",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de linguiça caprichado.",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Contra Filé",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de contra filé delicioso!",
                     price: 15.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Asinha de Frango",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de asinha de frango caprichado!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Provolone Bacon",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de provolone com bacon irresistível!",
                     price: 14.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Fraldinha",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de fraldinha caprichado!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
                   {
                     name: "Alcatra",
-                    description: "Generosa camada de pepperoni, mussarela e orégano.",
+                    description: "Espeto de alcatra delicioso!",
                     price: 10.00,
                     image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
                   },
@@ -349,13 +350,13 @@ export default function Home() {
                 {[
                   {
                     name: "Caldo de Frango",
-                    description: "Lata 350ml (Coca-Cola, Guaraná, Sprite)",
+                    description: "Delicioso caldo de frango acompanhado de torradas e cheiro verde",
                     price: 15.00,
                     image: coca,
                   },
                   {
                     name: "Caldo de Vaca atolada",
-                    description: "Copo 300ml (Laranja, Limão, Abacaxi)",
+                    description: "Delicioso caldo de vaca atolada acompanhado de torradas e cheiro verde",
                     price: 15.00,
                     image: coca,
                   },
@@ -382,7 +383,7 @@ export default function Home() {
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Localização</h3>
-              <p className="text-gray-600">Sempre em movimento pela cidade</p>
+              <p className="text-gray-600">Av. Bahia - Centro, 450 - Araguari - MG</p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
@@ -390,7 +391,7 @@ export default function Home() {
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Horário</h3>
-              <p className="text-gray-600">Ter-Dom: 18h às 23h</p>
+              <p className="text-gray-600">Segunda a Sábado: 17h às 22:30h</p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
@@ -398,7 +399,7 @@ export default function Home() {
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Contato</h3>
-              <p className="text-gray-600">(11) 99999-9999</p>
+              <p className="text-gray-600">(55) 34 8432-0119</p>
             </div>
           </div>
         </section>
