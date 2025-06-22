@@ -8,7 +8,13 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById("pedido");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const menuItems = [
     { label: '🏠 Início', href: '#inicio' },
@@ -17,6 +23,13 @@ const Header = () => {
     { label: 'ℹ️ Sobre', href: '#sobre' },
     { label: '📞 Contato', href: '#contato' },
   ];
+
+  const handleScroll = () => {
+    const element = document.getElementById("pedido");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -45,11 +58,13 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">
-              <Phone className="h-4 w-4" />
-              Ligar Agora
-            </button>
-            <button className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-medium transition-colors">
+            <a href="tel:+553484320119">
+              <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">
+                <Phone className="h-4 w-4" />
+                Ligar Agora
+              </button>
+            </a>
+            <button onClick={handleScroll} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-medium transition-colors">
               Fazer Pedido
             </button>
           </div>
@@ -128,6 +143,7 @@ const Header = () => {
                     </motion.button>
 
                     <motion.button
+                      
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.97 }}
                       className="w-full py-4 px-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-xl font-semibold transition-all shadow-lg"
