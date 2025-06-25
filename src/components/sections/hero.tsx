@@ -14,6 +14,13 @@ const handleScroll = () => {
   }
 }
 
+const handleScrollPedido = () => {
+  const element = document.getElementById("pedido")
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
 export default function Hero() {
   const phrases = ["O melhor espeto da cidade direto da nossa kombi para você!"]
 
@@ -42,7 +49,7 @@ export default function Hero() {
             <TypewriterText phrases={phrases} typeSpeed={80} cursorClassName="text-blue-600" />
           </p>
 
-          <div className="mt-4 flex flex-col sm:flex-row gap-4 md:mt-8 mb-4 md:mb-0 mx-8">
+          <div className="mt-4 flex flex-col sm:flex-row gap-4 md:mt-8 mb-4 md:mb-0 md:mx-8 mx-auto max-w-[200px] md:max-w-full">
             <Button
               onClick={handleScroll}
               size="lg"
@@ -53,6 +60,7 @@ export default function Hero() {
               <ChevronRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
             </Button>
             <Button
+              onClick={handleScrollPedido}
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/20 text-base lg:text-lg px-6 py-3 lg:px-8 lg:py-4"

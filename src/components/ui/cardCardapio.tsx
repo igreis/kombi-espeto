@@ -10,7 +10,7 @@ interface CardProps {
 
 const CardCardapio: React.FC<CardProps> = ({ title, description, price, image }) => {
   return (
-    <div className="max-h-28 flex flex-row lg:min-h-36 w-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+    <div data-aos="fade-up" data-aos-delay="100" className="max-h-28 flex flex-row lg:min-h-36 w-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
       {/* Content section with fixed width */}
       <div className="flex flex-col justify-between pt-2 pl-4 lg:p-4 w-2/3">
         <div className="flex-1">

@@ -3,7 +3,7 @@
 import { Button } from "../ui/button"
 //import { Card } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
-import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin, } from "react-icons/fa";
 import { ChevronRight, Clock, MapPin, Phone } from "lucide-react"
 import CardCardapio from "../ui/cardCardapio"
 import Header from "./header"
@@ -11,10 +11,10 @@ import CardDestaque from "../ui/cardDestaque"
 import kombi from '../../assets/image/hero/kombi.png'
 
 import Hero from "./hero"
+import logoIfood from '../../assets/image/logo/ifood-seeklogo.png'
 
 //import pizza from '../../assets/image/pizza.webp'
 
-import coca from '../../assets/image/coca.jpg'
 import fraldinha from '../../assets/image/espetos/espeto-fraldinha.jpeg'
 
 //espetos
@@ -40,15 +40,44 @@ import mandioca from '../../assets/image/porçoes/mandioca.jpg'
 import mandiocaTomate from '../../assets/image/porçoes/mandiocaTomate.jpg'
 import torresmo from '../../assets/image/porçoes/torresmo.jpg'
 import arroz from '../../assets/image/porçoes/arroz.webp'
-import jantinha from '../../assets/image/porçoes/jantinha.png'
+import jantinhaC from '../../assets/image/jantinha/jantinhaC.jpg'
+import jantinhaD from '../../assets/image/jantinha/jantinhaD.avif'
 import fritas from '../../assets/image/porçoes/fritas.avif'
 import fritasQueijo from '../../assets/image/porçoes/fritasQueijo.jpg'
 import ovoCodorna from '../../assets/image/porçoes/ovoCodorna.avif'
+import feijoada from '../../assets/image/porçoes/feijoada.webp'
 
 //caldos
 import caldoFeijao from '../../assets/image/caldos/caldoFeijao.jpg'
 import caldoFrango from '../../assets/image/caldos/caldoFrango.jpg'
 import caldoVaca from '../../assets/image/caldos/caldoVaca.jpg'
+
+//cerveja
+import amstel from '../../assets/image/cerveja/amstel.webp'
+import brahma from '../../assets/image/cerveja/brahma.webp'
+import heineken from '../../assets/image/cerveja/heineken.jpg'
+import heinekenLong from '../../assets/image/cerveja/heinekenLong.jpg'
+import skol from '../../assets/image/cerveja/skol.webp'
+import kaiser from '../../assets/image/cerveja/kaiser.webp'
+
+//refrigerante
+import coca from '../../assets/image/refrigerante/coca.jpg'
+import fantaGuarana from '../../assets/image/refrigerante/fantaGuarana.webp'
+import fantaUva from '../../assets/image/refrigerante/fanta-uva.webp'
+import fanta from '../../assets/image/refrigerante/fanta.webp'
+import sprite from '../../assets/image/refrigerante/sprite.webp'
+import mineiro from '../../assets/image/refrigerante/mineiro.jpeg'
+import antartica from '../../assets/image/refrigerante/antartica.webp'
+
+//sucos
+import laranja from '../../assets/image/suco/laranja.jpg'
+import abacaxi from '../../assets/image/suco/abacaxi.jpg'
+import morango from '../../assets/image/suco/morango.jpeg'
+import goiaba from '../../assets/image/suco/goiaba.png'
+import maracuja from '../../assets/image/suco/maracuja.jpg'
+import cupuaçu from '../../assets/image/suco/cupuaçu.jpeg'
+import acerola from '../../assets/image/suco/acerola.jpg'
+import laranjaMorango from '../../assets/image/suco/laranjaMorango.png'
 
 export default function Home() {
 
@@ -83,7 +112,7 @@ export default function Home() {
                   name: "Jantinha",
                   description: "Arroz, Feijão tropeiro, mandioca, vinagre e molho da casa.",
                   price: 25.00,
-                  image: jantinha,
+                  image: jantinhaD,
                 },
                 {
                   name: "Calda de Vaca atolada",
@@ -119,11 +148,11 @@ export default function Home() {
         {/* Menu */}
         <section id="cardapio" className="py-2 md:py-12 px-2 relative z-10 bg-gray-100">
           <div className="flex flex-col items-center text-center mb-2">
-            <h2 className="text-3xl font-bold tracking-tight">Nosso Cardápio</h2>
+            <h2 data-aos="fade-up" className="text-3xl font-bold tracking-tight">Nosso Cardápio</h2>
 
           </div>
 
-          <Tabs defaultValue="espetos" className="max-w-5xl 2xl:max-w-6xl mx-auto">
+          <Tabs data-aos="fade-up" data-aos-delay="100" defaultValue="espetos" className="max-w-5xl 2xl:max-w-6xl mx-auto">
             <TabsList className="flex flex-wrap justify-center gap-1 md:gap-2 p-2 mb-16">
               <TabsTrigger
                 value="espetos"
@@ -136,6 +165,12 @@ export default function Home() {
                 className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
               >
                 🍽️ Jantinha
+              </TabsTrigger>
+              <TabsTrigger
+                value="feijoada"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍽️ Feijoada
               </TabsTrigger>
               <TabsTrigger
                 value="porções"
@@ -266,10 +301,31 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
                 {[
                   {
-                    name: "Jantinha",
-                    description: "Arroz, Feijão tropeiro, mandioca, vinagre e molho da casa.",
+                    name: "Jantinha completa",
+                    description: "Arroz, feijão tropeiro, mandioca, vinagrete e molho da casa.",
                     price: 25.00,
-                    image: jantinha,
+                    image: jantinhaC,
+                  },
+                  // ... continue os outros
+                ].map((item, index) => (
+                  <CardCardapio
+                    key={index}
+                    title={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                  />
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="feijoada">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
+                {[
+                  {
+                    name: "Prato de Feijoada",
+                    description: "Arroz com feijoada, couve e farofa com acompanhamento de laranja",
+                    price: 24.90,
+                    image: feijoada,
                   },
                   // ... continue os outros
                 ].map((item, index) => (
@@ -289,51 +345,45 @@ export default function Home() {
                 {[
                   {
                     name: "Tomate",
-                    description: "Fatias de pão italiano com tomate, alho, manjericão e azeite.",
+                    description: "Tomate bem fresquinho.",
                     price: 8.00,
                     image: tomate,
                   },
                   {
                     name: "Torresmo",
-                    description: "Palitos de massa com alho, parmesão e ervas.",
+                    description: "Torresmo delicioso.",
                     price: 8.00,
                     image: torresmo,
                   },
                   {
                     name: "Mandioca",
-                    description: "Tomate, mussarela de búfala, manjericão e azeite.",
+                    description: "Mandioca saborosa.",
                     price: 10.00,
                     image: mandioca,
                   },
                   {
                     name: "Mandioca c/ Tomate",
-                    description: "Porção de batatas fritas crocantes.",
+                    description: "Mandioca com tomate sensacional.",
                     price: 12.00,
                     image: mandiocaTomate,
                   },
                   {
                     name: "Arroz",
-                    description: "Porção de batatas fritas crocantes.",
+                    description: "Arroz bem soltinho.",
                     price: 10.00,
                     image: arroz,
                   },
                   {
                     name: "Feijão Tropeiro",
-                    description: "Porção de batatas fritas crocantes.",
+                    description: "Feijão tropeiro caprichado.",
                     price: 12.00,
                     image: tropeiro,
                   },
                   {
                     name: "Jantinha sem espeto",
-                    description: "Porção de batatas fritas crocantes.",
+                    description: "Jantinha sem espeto deliciosa.",
                     price: 15.00,
                     image: jantinhaSemEspeto,
-                  },
-                  {
-                    name: "Jantinha completa",
-                    description: "Porção de batatas fritas crocantes.",
-                    price: 15.00,
-                    image: jantinha,
                   },
                   {
                     name: "Ovo de codorna",
@@ -381,37 +431,37 @@ export default function Home() {
                     name: "Amstel",
                     description: "Lata 350ml Amstel",
                     price: 7.00,
-                    image: coca,
+                    image: amstel,
                   },
                   {
                     name: "Brahma",
                     description: "Lata 350ml Brahma",
                     price: 5.00,
-                    image: coca,
+                    image: brahma,
                   },
                   {
                     name: "Skol",
                     description: "Lata 350ml Skol",
                     price: 7.00,
-                    image: coca,
+                    image: skol,
                   },
                   {
                     name: "Heineken lata",
                     description: "Lata 350ml Heineken",
                     price: 8.00,
-                    image: coca,
+                    image: heineken,
                   },
                   {
                     name: "Heineken Long neck",
                     description: "Long neck Heineken",
                     price: 9.90,
-                    image: coca,
+                    image: heinekenLong,
                   },
                   {
                     name: "Kaiser",
                     description: "Lata 350ml Kaiser",
                     price: 6.00,
-                    image: coca,
+                    image: kaiser,
                   },
                 ].map((item, index) => (
                   <CardCardapio
@@ -447,19 +497,19 @@ export default function Home() {
                     name: "Fanta Laranja",
                     description: "Lata 220ml Fanta Laranja",
                     price: 4.00,
-                    image: coca,
+                    image: fanta,
                   },
                   {
                     name: "Fanta Uva",
                     description: "Lata 220ml Fanta Uva",
                     price: 4.00,
-                    image: coca,
+                    image: fantaUva,
                   },
                   {
                     name: "Fanta Guaraná",
                     description: "Lata 220ml Fanta Guaraná",
                     price: 4.00,
-                    image: coca,
+                    image: fantaGuarana,
                   },
                 ].map((item, index) => (
                   <CardCardapio
@@ -494,31 +544,31 @@ export default function Home() {
                     name: "Fanta Laranja",
                     description: "Fanta Laranja 310ml",
                     price: 5.50,
-                    image: coca,
+                    image: fanta,
                   },
                   {
                     name: "Fanta Uva",
                     description: "Fanta Uva 310ml",
                     price: 5.50,
-                    image: coca,
+                    image: fantaUva,
                   },
                   {
                     name: "Sprite",
                     description: "Sprite 310ml",
                     price: 5.50,
-                    image: coca,
+                    image: sprite,
                   },
                   {
                     name: "Mineiro",
                     description: "Mineiro 350ml",
                     price: 5.50,
-                    image: coca,
+                    image: mineiro,
                   },
                   {
                     name: "Antártica",
                     description: "Antártica 350ml",
                     price: 5.50,
-                    image: coca,
+                    image: antartica,
                   },
                 ].map((item, index) => (
                   <CardCardapio
@@ -546,49 +596,49 @@ export default function Home() {
                     name: "Laranja",
                     description: "Suco de Laranja 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: laranja,
                   },
                   {
                     name: "Maracujá",
                     description: "Suco de Maracujá 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: maracuja,
                   },
                   {
                     name: "Goiaba",
                     description: "Suco de Goiaba 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: goiaba,
                   },
                   {
                     name: "Laranja/Morango",
                     description: "Suco de Laranja/Morango 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: laranjaMorango,
                   },
                   {
                     name: "Morango",
                     description: "Suco de Morango 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: morango,
                   },
                   {
                     name: "Abacaxi",
                     description: "Suco de Abacaxi 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: abacaxi,
                   },
                   {
                     name: "Acerola",
                     description: "Suco de Acerola 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: acerola,
                   },
                   {
                     name: "Cupuaçu",
                     description: "Suco de Cupuaçu 500ml",
                     price: 12.00,
-                    image: coca,
+                    image: cupuaçu,
                   },
                 ].map((item, index) => (
                   <CardCardapio
@@ -640,7 +690,7 @@ export default function Home() {
         <section className="bg-gray-100 relative z-10 container mx-auto py-8 px-4 max-w-[100dvw]">
           {/* Info Cards */}
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+            <div data-aos="zoom-in" className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
               <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
@@ -648,7 +698,7 @@ export default function Home() {
               <p className="text-gray-600">Av. Bahia - Centro, 450 - Araguari - MG</p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+            <div data-aos="zoom-in" className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
               <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Clock className="w-6 h-6 text-white" />
               </div>
@@ -656,7 +706,7 @@ export default function Home() {
               <p className="text-gray-600">Segunda a Sábado: 17h às 22:30h</p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
+            <div data-aos="zoom-in" className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-red-100 flex flex-col items-center">
               <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Phone className="w-6 h-6 text-white" />
               </div>
@@ -670,25 +720,25 @@ export default function Home() {
         <section id="sobre" className="bg-gray-100 py-2 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
           <div className="container mx-auto px-4 max-w-6xl 2xl:max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative  rounded-lg overflow-hidden">
+              <div data-aos="flip-left" className="relative  rounded-lg overflow-hidden">
                 <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/68/9d/2d/fachada-da-nossa-pizzeria.jpg?w=900&h=500&s=1" alt="Nossa Pizzaria" className="object-cover" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Nossa História</h2>
-                <p className="text-muted-foreground mb-4">
+                <h2 data-aos="fade-right" className="text-3xl font-bold tracking-tight mb-6">Nossa História</h2>
+                <p data-aos="fade-right" className="text-muted-foreground mb-4">
                   Fundada em 2005, a Pizzaria Delícia nasceu da paixão do chef Antonio pela culinária italiana. Após
                   anos de estudo e aperfeiçoamento na Itália, ele retornou ao Brasil com o sonho de criar pizzas
                   autênticas com um toque brasileiro.
                 </p>
-                <p className="text-muted-foreground mb-4">
+                <p data-aos="fade-right" className="text-muted-foreground mb-4">
                   Nossa missão é proporcionar momentos de felicidade através de pizzas artesanais de alta qualidade,
                   preparadas com ingredientes frescos e técnicas tradicionais.
                 </p>
-                <p className="text-muted-foreground mb-6">
+                <p data-aos="fade-right" className="text-muted-foreground mb-6">
                   Hoje, somos reconhecidos como uma das melhores pizzarias da cidade, com clientes fiéis que apreciam
                   nosso compromisso com a excelência e o sabor inigualável.
                 </p>
-                <Button className="bg-red-600 hover:bg-red-700">Conheça Nossa Equipe</Button>
+                {/* <Button data-aos="fade-right" className="bg-red-600 hover:bg-red-700">Conheça Nossa Equipe</Button> */}
               </div>
             </div>
           </div>
@@ -738,58 +788,143 @@ export default function Home() {
         </section>*/}
 
         {/* Contact/Location */}
-        <section id="contato" className="bg-gray-50 py-12 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
+        <section id="contato" className="bg-gray-50 py-6 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
           <div className="container mx-auto px-4 max-w-6xl 2xl:max-w-7xl">
-            <div className="flex flex-col items-center text-center mb-10">
-              <h2 className="text-3xl font-bold tracking-tight">Contato e Localização</h2>
-              <p className="mt-4 max-w-[700px] text-muted-foreground">
-                Visite-nos ou faça seu pedido pelos nossos canais de atendimento.
-              </p>
-            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold mb-4">Informações de Contato</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <MapPin className="h-5 w-5 text-red-600 mr-3" />
-                    <p>Av. Bahia - Centro, 450 - Araguari - MG</p>
-                  </div>
-                  <div className="flex items-center">
-                    <Phone className="h-5 w-5 text-red-600 mr-3" />
-                    <p>(55) 34 8432-0119</p>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="h-5 w-5 text-red-600 mr-3" />
+              <div data-aos="fade-up" className="max-w-md mx-auto">
+                <div className="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 border border-purple-200 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
+                  <div className="p-8">
+                    {/* Header */}
+                    <div className="text-center mb-8">
+                      <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <MapPin className="h-10 w-10 text-white" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-black mb-3">
+                        Kombi Espeto
+                      </h2>
+                      <div id="pedido" className="w-16 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full"></div>
+                    </div>
+
+                    {/* Contact Information */}
+                    <div className="space-y-6 mb-8">
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mr-3"></div>
+                        Informações de Contato
+                      </h3>
+
+                      <div className="space-y-5">
+                        <div className="flex items-start group cursor-pointer">
+                          <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl flex items-center justify-center group-hover:from-purple-200 group-hover:to-indigo-200 transition-all duration-300 shadow-md">
+                            <MapPin className="h-6 w-6 text-purple-600" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-gray-800 font-semibold text-lg">Endereço</p>
+                            <p className="text-gray-600">Av. Bahia - Centro, 450</p>
+                            <p className="text-gray-600">Araguari - MG</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center group cursor-pointer">
+                          <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl flex items-center justify-center group-hover:from-purple-200 group-hover:to-indigo-200 transition-all duration-300 shadow-md">
+                            <Phone className="h-6 w-6 text-purple-600" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-gray-800 font-semibold text-lg">Telefone</p>
+                            <a
+                              href="tel:+553484320119"
+                              className="text-purple-600 hover:text-indigo-600 transition-colors font-medium text-lg"
+                            >
+                              (34) 8432-0119
+                            </a>
+                          </div>
+                        </div>
+
+                        <div className="flex items-start group cursor-pointer">
+                          <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-purple-100 to-indigo-100 rounded-xl flex items-center justify-center group-hover:from-purple-200 group-hover:to-indigo-200 transition-all duration-300 shadow-md">
+                            <Clock className="h-6 w-6 text-purple-600" />
+                          </div>
+                          <div className="ml-4">
+                            <p className="text-gray-800 font-semibold text-lg">Horário de Funcionamento</p>
+                            <p className="text-gray-600">Segunda a Sábado</p>
+                            <p className="text-purple-600 font-bold">17h às 22:30h</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Social Media */}
                     <div>
-                      <p>Segunda a Sábado: 17h às 22:30h</p>
+                      <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                        <div className="w-3 h-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full mr-3"></div>
+                        Redes Sociais
+                      </h3>
+
+                      <div className="flex justify-center gap-6">
+                        <a
+                          href="https://www.instagram.com/kombi_espeto/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                        >
+                          <FaInstagram />
+                          <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-medium">
+                            Instagram
+                          </span>
+                        </a>
+
+                        <a
+                          href="https://www.facebook.com/kombi_espeto/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                        >
+                          <FaFacebook />
+                          <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-medium">
+                            Facebook
+                          </span>
+                        </a>
+
+                        <a
+                          href="https://wa.me/553484320119"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl"
+                        >
+                          <FaWhatsapp />
+                          <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-medium">
+                            WhatsApp
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Call to Action */}
+                    <div className="mt-10 pt-6 border-t border-purple-200">
+                      <div className="text-center">
+                        <p className="text-gray-600 mb-4 text-lg">Entre em contato conosco!</p>
+                        <a
+                          href="https://wa.me/553484320119"
+                          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-lg"
+                        >
+                          <FaWhatsapp />
+                          <span className="ml-3">Fazer Pedido</span>
+                        </a>
+                        <a
+                          href="https://wa.me/553484320119"
+                          className="mt-4 inline-flex items-center px-8 py-4 border-2 border-red-600 text-red-600 font-bold rounded-2xl hover:bg-red-50 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 text-lg bg-white"
+                        >
+                          <img src={logoIfood} alt="iFood" className="w-6 h-6" />
+                          <span className="ml-3">Fazer Pedido</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mt-8 mb-4">Redes Sociais</h3>
-                <div className="flex gap-4">
-                  <a
-                    href="https://www.instagram.com/kombi_espeto/" target="_blank" rel="noopener noreferrer"
-                    className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
-                  >
-                    <FaInstagram className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/kombi_espeto/" target="_blank" rel="noopener noreferrer"
-                    className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
-                  >
-                    <FaFacebook className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="https://wa.me/553484320119" target="_blank" rel="noopener noreferrer"
-                    className="h-10 w-10 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors"
-                  >
-                    <FaWhatsapp className="h-5 w-5" />
-                  </a>
-                </div>
               </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
+              {/* Mapa */}
+              <div data-aos="flip-up" className="relative h-[400px] rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.1018483027306!2d-48.200893924046596!3d-18.65942510000595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a431ad5660344d%3A0x37f6cc9835ced63e!2sAv.%20Bahia%2C%20450%20-%20Centro%2C%20Araguari%20-%20MG%2C%2038440-188!5e0!3m2!1spt-BR!2sbr!4v1749911907420!5m2!1spt-BR!2sbr"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.101735069071!2d-48.20089392495864!3d-18.659430182461264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a431ad5660344d%3A0x37f6cc9835ced63e!2sAv.%20Bahia%2C%20450%20-%20Centro%2C%20Araguari%20-%20MG%2C%2038440-188!5e0!3m2!1spt-BR!2sbr!4v1750871502053!5m2!1spt-BR!2sbr"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -797,7 +932,6 @@ export default function Home() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full"
                 ></iframe>
-
                 <div className="absolute inset-0 flex items-center justify-center">
                   <a
                     href="https://maps.app.goo.gl/t8DjKJjvthvPNLET7"
@@ -810,36 +944,11 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="bg-red-600 text-white py-12 max-w-[100dvw] mx-auto z-10 relative" id="pedido">
-          <div className="container mx-auto text-center px-4 max-w-6xl md:flex md:flex-col md:items-center">
-            <h2 className="text-3xl font-bold mb-4">Faça seu Pedido Agora!</h2>
-            <p className="max-w-[600px] mx-auto mb-8">
-              Experimente nossas deliciosas pizzas artesanais. Entrega rápida ou venha nos visitar!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
-                <Phone className="mr-2 h-4 w-4" />
-                Ligar Agora
-              </Button>
-              <a href="https://ifood.com.br/restaurantes/kombi-espeto-450-bahia-araguari" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 w-full">
-                  Fazer Pedido pelo Ifood
-                </Button>
-              </a>
-              <a href="https://wa.me/553484320119" target="_blank" rel="noopener noreferrer" className="w-full">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 w-full">
-                  Fazer Pedido pelo WhatsApp
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}

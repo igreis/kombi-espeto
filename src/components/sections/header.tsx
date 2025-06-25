@@ -19,7 +19,7 @@ const Header = () => {
   const menuItems = [
     { label: '🏠 Início', href: '#inicio' },
     { label: '⭐ Destaques', href: '#destaques' },
-    { label: '🍕 Cardápio', href: '#cardapio' },
+    { label: '🍡 Cardápio', href: '#cardapio' },
     { label: 'ℹ️ Sobre', href: '#sobre' },
     { label: '📞 Contato', href: '#contato' },
   ];
@@ -149,7 +149,7 @@ const Header = () => {
                       className="w-full py-4 px-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-xl font-semibold transition-all shadow-lg"
                       onClick={closeMobileMenu}
                     >
-                      🍕 Fazer Pedido
+                      🍡 Fazer Pedido
                     </motion.button>
                   </div>
                 </div>
