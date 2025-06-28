@@ -3,7 +3,7 @@
 import { Button } from "../ui/button"
 import { ChevronRight } from "lucide-react"
 
-import logo from "../../assets/image/hero/logo.png"
+import logo from "../../assets/image/hero/LOGO.png"
 import bg from "../../assets/image/hero/bg-amadeirado.jpg"
 import TypewriterText from "../TypewriterText"
 
