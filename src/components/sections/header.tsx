@@ -8,6 +8,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     const element = document.getElementById("pedido");
@@ -139,7 +140,7 @@ const Header = () => {
                       onClick={closeMobileMenu}
                     >
                       <Phone className="h-5 w-5" />
-                      Ligar Agora
+                      <a href="tel:+553484320119">Ligar Agora</a>
                     </motion.button>
 
                     <motion.button

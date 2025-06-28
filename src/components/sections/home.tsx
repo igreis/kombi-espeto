@@ -4,11 +4,12 @@ import { Button } from "../ui/button"
 //import { Card } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
 import { FaWhatsapp, FaInstagram, FaFacebook, FaLinkedin, } from "react-icons/fa";
-import { ChevronRight, Clock, MapPin, Phone } from "lucide-react"
+import { ChevronRight, Clock, MapPin, Phone, Star } from "lucide-react"
 import CardCardapio from "../ui/cardCardapio"
 import Header from "./header"
 import CardDestaque from "../ui/cardDestaque"
 import kombi from '../../assets/image/hero/kombi.png'
+import { Card } from '../ui/card'
 
 import Hero from "./hero"
 import logoIfood from '../../assets/image/logo/ifood-seeklogo.png'
@@ -252,7 +253,7 @@ export default function Home() {
                     name: "Linguiça com Jiló",
                     description: "Espeto de linguiça caprichado.",
                     price: 10.00,
-                    image: "https://alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png",
+                    image: "https://cdn.awsli.com.br/2500x2500/2435/2435768/produto/163790177/2c706de901.jpg",
                   },
                   {
                     name: "Contra Filé",
@@ -716,7 +717,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About */}
+        {/* About 
         <section id="sobre" className="bg-gray-100 py-2 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
           <div className="container mx-auto px-4 max-w-6xl 2xl:max-w-7xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -738,39 +739,36 @@ export default function Home() {
                   Hoje, somos reconhecidos como uma das melhores pizzarias da cidade, com clientes fiéis que apreciam
                   nosso compromisso com a excelência e o sabor inigualável.
                 </p>
-                {/* <Button data-aos="fade-right" className="bg-red-600 hover:bg-red-700">Conheça Nossa Equipe</Button> */}
+                {/* <Button data-aos="fade-right" className="bg-red-600 hover:bg-red-700">Conheça Nossa Equipe</Button> 
               </div>
             </div>
           </div>
-        </section>
+        </section>*/}
 
-        {/* Testimonials 
+        {/* Testimonials */}
         <section className="container mx-auto py-12 md:py-16 px-4 max-w-[100dvw] z-10 relative bg-white">
           <div className="flex flex-col items-center text-center mb-10 ">
-            <h2 className="text-3xl font-bold tracking-tight">O Que Nossos Clientes Dizem</h2>
-            <p className="mt-4 max-w-[700px] text-muted-foreground">
-              Veja as avaliações de quem já experimentou nossas deliciosas pizzas.
-            </p>
+            <h2 data-aos="fade-up" className="text-3xl font-bold tracking-tight">O Que Nossos Clientes Dizem</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
-                name: "Carlos Silva",
-                text: "A melhor pizza que já comi! Massa perfeita, ingredientes frescos e entrega rápida. Recomendo a todos!",
+                name: "Kailane",
+                text: "Feijoada deliciosa!",
                 rating: 5,
               },
               {
-                name: "Ana Oliveira",
-                text: "Ambiente aconchegante e atendimento excelente. A pizza quatro queijos é simplesmente divina!",
+                name: "Larissa",
+                text: "O melhor caldo que eu já comi em araguari. Que delícia! Super indico. Saboroso!",
                 rating: 5,
               },
               {
-                name: "Roberto Santos",
-                text: "Peço toda semana e nunca me decepciona. Preço justo pela qualidade que oferecem.",
+                name: "Nicole",
+                text: "Os caldos são excelentes. Dá pra ver que são ingredientes de boa qualidade. Pedi 2 torresmos adicionais e veio super sequinho, uma delícia. Parabéns!",
                 rating: 4,
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="p-6">
+              <Card data-aos="fade-up" key={index} className="p-6">
                 <div className="flex items-center mb-4">
                   <div className="flex">
                     {Array(testimonial.rating)
@@ -785,7 +783,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-        </section>*/}
+        </section>
 
         {/* Contact/Location */}
         <section id="contato" className="bg-gray-50 py-6 md:py-16 max-w-[100dvw] mx-auto z-10 relative">
@@ -910,12 +908,15 @@ export default function Home() {
                           <span className="ml-3">Fazer Pedido</span>
                         </a>
                         <a
-                          href="https://wa.me/553484320119"
+                          href="https://www.ifood.com.br/delivery/araguari-mg/kombi--espeto-centro/ac7c69e0-c1d2-44e7-b7f4-7a75d9f0598c?UTM_Medium=share"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="mt-4 inline-flex items-center px-8 py-4 border-2 border-red-600 text-red-600 font-bold rounded-2xl hover:bg-red-50 transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 text-lg bg-white"
                         >
                           <img src={logoIfood} alt="iFood" className="w-6 h-6" />
                           <span className="ml-3">Fazer Pedido</span>
                         </a>
+
                       </div>
                     </div>
                   </div>

@@ -25,7 +25,7 @@ export default function Hero() {
   const phrases = ["O melhor espeto da cidade direto da nossa kombi para você!"]
 
   return (
-    <section id="inicio" className="w-full h-[75dvh] h800:h-[70dvh] h930:h-[65dvh] relative">
+    <section id="inicio" className="w-full h-[75dvh] h720:h-[68dvh] h800:h-[70dvh] h930:h-[65dvh] relative">
       {/* Imagem de fundo */}
       <img src={bg || "/placeholder.svg"} alt="Pizza Hero" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-black/60" />
