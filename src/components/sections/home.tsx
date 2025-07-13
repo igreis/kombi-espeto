@@ -118,13 +118,13 @@ export default function Home() {
                 {
                   name: "Calda de Vaca atolada",
                   description: "Calda de vaca atolada, mandioca, vinagre e molho da casa.",
-                  price: 25.00,
+                  price: 15.00,
                   image: "https://static.itdg.com.br/images/1200-675/ffb032afadf46833a5b9adf0fd20e0fd/caldo-de-vaca-atolada.jpg",
                 },
                 {
                   name: "Fraldinha",
-                  description: "Espeto de vaca delicioso!",
-                  price: 54.90,
+                  description: "Espeto de fraldinha caprichado!",
+                  price: 10.00,
                   image: fraldinha,
                 },
               ].map((item, index) => (
@@ -204,13 +204,13 @@ export default function Home() {
                   {
                     name: "Franqueijo",
                     description: "Delicioso espeto de frango com queijo!",
-                    price: 11.00,
+                    price: 10.00,
                     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnvLUIxMZhBw-HribSvitWcmLWtUN4JJ9pYA&s",
                   },
                   {
                     name: "Kafta com Queijo",
                     description: "Espeto de kafta irresistível!",
-                    price: 11.00,
+                    price: 10.00,
                     image: kaftaQueijo,
                   },
                   {
@@ -250,15 +250,9 @@ export default function Home() {
                     image: linguicaSuina,
                   },
                   {
-                    name: "Linguiça com Jiló",
-                    description: "Espeto de linguiça caprichado.",
-                    price: 10.00,
-                    image: "https://cdn.awsli.com.br/2500x2500/2435/2435768/produto/163790177/2c706de901.jpg",
-                  },
-                  {
                     name: "Contra Filé",
                     description: "Espeto de contra filé delicioso!",
-                    price: 15.00,
+                    price: 10.00,
                     image: contraFile,
                   },
                   {
@@ -353,7 +347,7 @@ export default function Home() {
                   {
                     name: "Torresmo",
                     description: "Torresmo delicioso.",
-                    price: 8.00,
+                    price: 12.00,
                     image: torresmo,
                   },
                   {
