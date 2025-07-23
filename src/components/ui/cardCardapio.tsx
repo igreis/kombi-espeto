@@ -6,11 +6,12 @@ interface CardProps {
   description: string
   price: number
   image: string
+  maxHeight?: string
 }
 
-const CardCardapio: React.FC<CardProps> = ({ title, description, price, image }) => {
+const CardCardapio: React.FC<CardProps> = ({ title, description, price, image, maxHeight = "max-h-28" }) => {
   return (
-    <div data-aos="fade-up" data-aos-delay="100" className="max-h-28 flex flex-row lg:min-h-36 w-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+    <div data-aos="fade-up" data-aos-delay="100" className={`${maxHeight} flex flex-row lg:min-h-36 w-full bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg`}>
       {/* Content section with fixed width */}
       <div className="flex flex-col justify-between pt-2 pl-4 lg:p-4 w-2/3">
         <div className="flex-1">
@@ -26,7 +27,7 @@ const CardCardapio: React.FC<CardProps> = ({ title, description, price, image })
       </div>
 
       {/* Image section with fixed width */}
-      <div className="w-1/3 h-36">
+      <div className="w-1/3 h-34">
         <img
           src={image || "/placeholder.svg"}
           alt={title}

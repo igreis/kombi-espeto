@@ -14,10 +14,6 @@ import { Card } from '../ui/card'
 import Hero from "./hero"
 import logoIfood from '../../assets/image/logo/ifood-seeklogo.png'
 
-//import pizza from '../../assets/image/pizza.webp'
-
-import fraldinha from '../../assets/image/espetos/espeto-fraldinha.jpeg'
-
 //espetos
 import franbacon from '../../assets/image/espetos/franbacon.jpeg'
 import alcatra from '../../assets/image/espetos/alcatra.jpg'
@@ -33,6 +29,8 @@ import queijoCoalho from '../../assets/image/espetos/queijoCoalho.jpg'
 import queijoProvolone from '../../assets/image/espetos/queijoProvolone.jpg'
 import kaftaQueijo from '../../assets/image/espetos/kaftaQueijo.jpeg'
 
+import hambuerguers from '../../assets/image/hamburguers/hamburguers.jpg'
+
 //porçoes
 import tropeiro from '../../assets/image/porçoes/tropeiro.jpeg'
 import jantinhaSemEspeto from '../../assets/image/porçoes/jantinhaSemEspeto.jpeg'
@@ -45,7 +43,6 @@ import jantinhaC from '../../assets/image/jantinha/jantinhaC.jpg'
 import jantinhaD from '../../assets/image/jantinha/jantinhaD.avif'
 import fritas from '../../assets/image/porçoes/fritas.avif'
 import fritasQueijo from '../../assets/image/porçoes/fritasQueijo.jpg'
-import ovoCodorna from '../../assets/image/porçoes/ovoCodorna.avif'
 import feijoada from '../../assets/image/porçoes/feijoada.webp'
 
 //caldos
@@ -79,6 +76,11 @@ import maracuja from '../../assets/image/suco/maracuja.jpg'
 import cupuaçu from '../../assets/image/suco/cupuaçu.jpeg'
 import acerola from '../../assets/image/suco/acerola.jpg'
 import laranjaMorango from '../../assets/image/suco/laranjaMorango.png'
+
+//hamburguers
+import standard from '../../assets/image/hamburguers/standard.jpg'
+import bacon from '../../assets/image/hamburguers/bacon.jpeg'
+import top from '../../assets/image/hamburguers/top.png'
 
 export default function Home() {
 
@@ -122,10 +124,10 @@ export default function Home() {
                   image: "https://static.itdg.com.br/images/1200-675/ffb032afadf46833a5b9adf0fd20e0fd/caldo-de-vaca-atolada.jpg",
                 },
                 {
-                  name: "Fraldinha",
-                  description: "Espeto de fraldinha caprichado!",
-                  price: 10.00,
-                  image: fraldinha,
+                  name: "Kombi top",
+                  description: "Pão brioche, 2 blend de 150g, cheddar duplo, cebola roxa, bacon e molho rousi.",
+                  price: 25.99,
+                  image: top,
                 },
               ].map((item, index) => (
                 <CardDestaque
@@ -146,6 +148,13 @@ export default function Home() {
           </div>
         </section>
 
+        {/*novidades*/}
+        <section id="novidades" className="py-2 md:py-12 px-2 relative z-10 bg-gray-100">
+          <div className="flex flex-col items-center text-center mb-6" data-aos="fade-up" data-aos-delay="100">
+            <img src={hambuerguers} alt="" className="max-h-[420px] rounded-lg" />
+          </div>
+        </section>
+
         {/* Menu */}
         <section id="cardapio" className="py-2 md:py-12 px-2 relative z-10 bg-gray-100">
           <div className="flex flex-col items-center text-center mb-2">
@@ -154,7 +163,7 @@ export default function Home() {
           </div>
 
           <Tabs data-aos="fade-up" data-aos-delay="100" defaultValue="espetos" className="max-w-5xl 2xl:max-w-6xl mx-auto">
-            <TabsList className="flex flex-wrap justify-center gap-1 md:gap-2 p-2 mb-16">
+            <TabsList className="flex flex-wrap justify-center gap-1 md:gap-2 p-2 mb-28 md:mb-12">
               <TabsTrigger
                 value="espetos"
                 className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
@@ -190,6 +199,12 @@ export default function Home() {
                 className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
               >
                 🍲 Caldos
+              </TabsTrigger>
+              <TabsTrigger
+                value="hamburguers"
+                className="px-3 md:px-4 py-2 md:py-3 rounded-lg font-medium text-sm md:text-sm transition-all duration-200 data-[state=active]:bg-red-500 data-[state=active]:text-white text-black hover:text-white hover:bg-gray-700/50 whitespace-nowrap"
+              >
+                🍲 Hambúrguers
               </TabsTrigger>
             </TabsList>
             <TabsContent value="espetos">
@@ -264,7 +279,7 @@ export default function Home() {
                   {
                     name: "Provolone Bacon",
                     description: "Espeto de provolone com bacon irresistível!",
-                    price: 14.00,
+                    price: 12.00,
                     image: provoloneBacon,
                   },
                   {
@@ -313,6 +328,44 @@ export default function Home() {
                 ))}
               </div>
             </TabsContent>
+            
+            <TabsContent value="hamburguers">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
+                {[
+                  {
+                    name: "Kombi bacon",
+                    description: "Pão brioche, blend de 150g, bacon, tomate, cebola e molho rousi.",
+                    price: 17.99,
+                    image: bacon,
+                    maxHeight: "max-h-32",
+                  },
+                  {
+                    name: "Kombi top",
+                    description: "Pão brioche, 2 blend de 150g, cheddar duplo, cebola roxa, bacon e molho rousi.",
+                    price: 25.99,
+                    image: top,
+                    maxHeight: "max-h-32",
+                  },
+                  {
+                    name: "Kombi standard",
+                    description: "Pão brioche, blend de 150g, cheddar, tomate e molho rousi.",
+                    price: 15.99,
+                    image: standard,
+                    maxHeight: "max-h-32",
+                  },
+                  // ... continue os outros
+                ].map((item, index) => (
+                  <CardCardapio
+                    key={index}
+                    title={item.name}
+                    description={item.description}
+                    price={item.price}
+                    image={item.image}
+                    maxHeight={item.maxHeight}
+                  />
+                ))}
+              </div>
+            </TabsContent>
             <TabsContent value="feijoada">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mx-auto">
                 {[
@@ -347,7 +400,7 @@ export default function Home() {
                   {
                     name: "Torresmo",
                     description: "Torresmo delicioso.",
-                    price: 12.00,
+                    price: 16.90,
                     image: torresmo,
                   },
                   {
@@ -381,21 +434,15 @@ export default function Home() {
                     image: jantinhaSemEspeto,
                   },
                   {
-                    name: "Ovo de codorna",
-                    description: "Porção de batatas fritas crocantes.",
-                    price: 15.00,
-                    image: ovoCodorna,
-                  },
-                  {
                     name: "Fritas com queijo e bacon",
-                    description: "Porção de batatas fritas crocantes.",
-                    price: 15.00,
+                    description: "Porção de batatas fritas crocantes com queijo e bacon.",
+                    price: 29.90,
                     image: fritasQueijo,
                   },
                   {
                     name: "Porção de fritas",
                     description: "Porção de batatas fritas crocantes.",
-                    price: 15.00,
+                    price: 20.00,
                     image: fritas,
                   },
                 ].map((item, index) => (
@@ -792,7 +839,7 @@ export default function Home() {
                         <MapPin className="h-10 w-10 text-white" />
                       </div>
                       <h2 className="text-3xl font-bold text-black mb-3">
-                        Kombi Espeto
+                        Kombi Espeto & Burguer na Brasa
                       </h2>
                       <div id="pedido" className="w-16 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 mx-auto rounded-full"></div>
                     </div>
@@ -959,7 +1006,7 @@ export default function Home() {
                   height={40}
                   className="rounded-full"
                 />
-                <span className="text-xl font-bold text-white">Kombi & Espeto</span>
+                <span className="text-xl font-bold text-white">Kombi Espeto & Burguer na Brasa </span>
               </div>
               <p className="text-sm">
                 O melhor espeto da cidade direto da nossa kombi para você!
