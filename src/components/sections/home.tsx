@@ -79,7 +79,7 @@ import laranjaMorango from '../../assets/image/suco/laranjaMorango.png'
 
 //hamburguers
 import standard from '../../assets/image/hamburguers/standard.jpg'
-import bacon from '../../assets/image/hamburguers/bacon.jpeg'
+import bacon from '../../assets/image/hamburguers/bacon.png'
 import top from '../../assets/image/hamburguers/top.png'
 
 export default function Home() {
@@ -994,9 +994,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 max-w-[100dvw] mx-auto z-10 relative w-full">
+      <footer className="bg-gray-900 text-gray-300 py-8 max-w-[100dvw] flex items-center justify-center z-10 relative w-full">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex items-center justify-center gap-8 md:mx-20">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img
@@ -1011,37 +1011,6 @@ export default function Home() {
               <p className="text-sm">
                 O melhor espeto da cidade direto da nossa kombi para você!
               </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Links Rápidos</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#inicio" className="text-sm hover:text-white transition-colors">
-                    Início
-                  </a>
-                </li>
-                <li>
-                  <a href="#cardapio" className="text-sm hover:text-white transition-colors">
-                    Cardápio
-                  </a>
-                </li>
-                <li>
-                  <a href="#sobre" className="text-sm hover:text-white transition-colors">
-                    Sobre Nós
-                  </a>
-                </li>
-                <li>
-                  <a href="#contato" className="text-sm hover:text-white transition-colors">
-                    Contato
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-white mb-4">Horário de Funcionamento</h3>
-              <ul className="space-y-2 text-sm">
-                <li>Segunda a Sábado: 17h às 22:30h</li>
-              </ul>
             </div>
           </div>
           <div className=" text-center flex justify-center gap-[20px] flex-nowrap">
